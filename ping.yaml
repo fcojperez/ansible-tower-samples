@@ -1,0 +1,6 @@
+---
+  - name: Test VMs
+    hosts: all
+    tasks:
+      - name: ping
+        ping:
