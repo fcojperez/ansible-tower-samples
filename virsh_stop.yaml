@@ -1,0 +1,17 @@
+---
+  - name: List all VMs
+    hosts: all
+    tasks:
+      - name: virsh list
+        shell: |
+          for vm in $(virsh list --name)
+          do
+            echo "Stopping VM: $vm"
+            virsh stop $vm
+          done
+          exit 0  
+        register: result
+
+
+      - debug:
+          msg: "{{ result.stdout_lines }}" 
