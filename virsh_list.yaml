@@ -3,4 +3,4 @@
     hosts: all
     tasks:
       - name: virsh list
-        shell: virsh list
+        shell: virsh list --all
