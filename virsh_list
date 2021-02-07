@@ -1,0 +1,6 @@
+---
+  - name: List all VMs
+    hosts: all
+    tasks:
+      - name: virsh list
+        shell: virsh list
