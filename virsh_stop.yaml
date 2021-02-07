@@ -7,7 +7,7 @@
           for vm in $(virsh list --name)
           do
             echo "Stopping VM: $vm"
-            virsh stop $vm
+            virsh destroy $vm
           done
           exit 0  
         register: result
