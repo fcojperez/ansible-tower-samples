@@ -4,3 +4,7 @@
     tasks:
       - name: virsh list
         shell: virsh list --all
+        register: result
+      - debug:
+          msg: "{{ result.stdout_lines }}"
+
